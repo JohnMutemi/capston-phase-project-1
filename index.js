@@ -1,35 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetchCars();
-});
+    // Fetch the data from db.json
+    fetch("http://localhost:3000/cars") 
+        .then(response => response.json()) // Parse the JSON from the response
+        .then(data => {
+            console.log(data)
+            // Get the car display container
+            const carDisplayContainer = document.querySelector('.car-display-container');
 
-function fetchCars() {
-    // Assuming db.json is hosted on your server at this path
-    fetch('/path/to/your/db.json')
-        .then(response => response.json())
-        .then(data => displayCars(data.cars))
+            // Loop through each car in the data
+            data.forEach(car => {
+                // Create a div to hold the car details
+                const carDiv = document.createElement('div');
+                carDiv.classList.add('car');
+
+                // Add the car image
+                const carImage = document.createElement('img');
+                carImage.src = car.image;
+                carImage.alt = car.model;
+                carDiv.appendChild(carImage);
+
+                // Add the car model
+                const carModel = document.createElement('h4');
+                carModel.textContent = car.model;
+                carDiv.appendChild(carModel);
+
+                // Add the year of manufacture
+                const carYear = document.createElement('p');
+                carYear.textContent = `Year of Manufacture: ${car.yearOfManufacture}`;
+                carDiv.appendChild(carYear);
+
+                // Append the carDiv to the carDisplayContainer
+                carDisplayContainer.appendChild(carDiv);
+            });
+        })
         .catch(error => console.error('Error fetching cars:', error));
-}
 
-function displayCars(cars) {
-    const container = document.querySelector('.car-display-container');
+            fetch("http://localhost:3000/cars")
+                .then(response => response.json())
+                .then(data => {
+                    const makeDropdown = document.querySelector('.car-make-dropdown');
+                    const carMakes = new Set(data.map(car => car.model)); // This removes any duplicates
+        console.log(carMakes)
+                    carMakes.forEach(make => {
+                        const option = document.createElement('option');
+                        option.value = make;
+                        option.textContent = make;
+                        makeDropdown.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching car makes:', error));
 
-    // Clear previous content
-    container.innerHTML = '';
-
-    // Add a header
-    const header = document.createElement('h2');
-    header.textContent = 'View our car display';
-    container.appendChild(header);
-
-    cars.forEach(car => {
-        const carElement = document.createElement('div');
-        carElement.classList.add('car');
-
-        const image = document.createElement('img');
-        image.src = car.image;
-        image.alt = `Image of ${car.model}`;
-        image.classList.add('car-image');
-
-        const model = document.createElement('h3');
-        model.textContent = car.model;
-        model
+            
+});

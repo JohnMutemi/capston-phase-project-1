@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row align-items-center py-3">
                 <div class="col-lg-2 col-md-3 col-sm-4">
-                    <img src="./images/makuti logo.jpeg" alt="Maruti Cars Logo" class="logo img-fluid"> <!-- Responsive image -->
+                    <img src="./images/maruti_logo.jpeg" alt="Maruti Cars Logo" class="logo img-fluid">
                 </div>
                 <div class="col-lg-10 col-md-9 col-sm-8">
                     <div class="header-text">
@@ -24,57 +24,32 @@
         </div>
     </header>
     
-    
-    <nav class="main-nav">
-        <ul class="nav-list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#used-cars">Used Cars</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
-    
-    <div class="search-section">
-        <!-- Car Make Dropdown -->
-        <select class="car-make-dropdown" name="make">
-            <option value="">Select Make</option>
-            <h3>Mercedenz Benz A180</h3>
-            <h3>VolksWagen Touareg</h3>
-            <h3>Ram 1500 Quad</h3>
-            <h3>Hyundai Santa Fe 2.0 T Limited FWD</h3>
-            <h3>BMW 220i Coupe</h3>
-            <h3>Mercedes-AMG A 45 S 4MATIC</h3>
-
-            <!-- Add options here -->
-        </select>
-        
-        <!-- Year Range Slider -->
-        <div class="year-range-slider">
-            <input type="range" min="1980" max="2023" value="2000" class="slider" id="yearRange">
+    <main>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#view">Available Cars</a></li>
+                <li><a href="#about">Filter By Budget</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <!-- Find a Car Section -->
+        <div class="find-a-car-section">
+            <h3>Find a Car</h3>
+            <div class="form-group">
+                <label for="make-dropdown">Make:</label>
+                <select class="car-make-dropdown" id="make-dropdown">
+                    <option value="">Select Make</option>
+                    <!-- JavaScript will populate this dropdown -->
+                </select>
+            </div>
         </div>
-    </div>
-    
-    
-      
-    
-        <!-- <section id="cars" class="car-marquee"> -->
-            <!-- <img src="https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240409-WA0320.jpg" alt="Mercedenz Benz A180"/> -->
-            <!-- <img src="https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240409-WA0311.jpg" alt="VolksWagen Touareg"/> -->
-            <!-- <img src= "https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20240409-WA0445.jpg" alt="Mazda Atenza"/> -->
-            <!-- <img src="https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20240408-WA0167.jpg" alt="Subaru Outback"/> -->
-            <!-- <img src="https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20240408-WA0126.jpg" alt="BMW X6 F16 XDRIVE 35i"/> -->
-            <!-- <img src="https://www.kaiandkaro.com/images/hero.svg" alt="Mercedes-AMG A 45 S 4MATIC"/> -->
-
-
-
-        <!-- </section> -->
-      <!-- Container for displaying cars -->
-         <div class="car-display-container" id ="cars"> 
-             <h2>View our car display</h2> 
-            <!-- <div class="car-images"> -->
-          
-            <!-- </div> -->
-        <!-- </div> -->
+        <div class="car-display-container" id="cars"> 
+            <h2>View our car display</h2>
+        </div>
+        
+        
+        
     </main>
   
     <!-- Bootstrap JavaScript -->
