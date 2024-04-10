@@ -1,0 +1,41 @@
+{
+    "cars": [
+      {
+        "id": 1,
+        "image": "https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240409-WA0320.jpg",
+        "model": "Mercedenz Benz A180",
+        "yearOfManufacture": 2015
+      },
+      {
+        "id": 2,
+        "image": "https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240409-WA0311.jpg",
+        "model": "VolsWage Touareg",
+        "yearOfManufacture": 2011
+      },
+      {
+        "id": 3,
+        "image": "https://www.kaiandkaro.com/images/hero.svg",
+        "model": "Mercedes-AMG A 45 S 4MATIC",
+        "yearOfManufacture": 2022
+      },
+      {
+        "id": 4,
+        "image": "https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20240408-WA0126.jpg",
+        "model": "BMW X6 F16 XDRIVE 35i",
+        "yearOfManufacture": 2022
+      },
+      {
+        "id": 5,
+        "image": "https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20240408-WA0167.jpg",
+        "model": "Subaru Outback",
+        "yearOfManufacture": 2021
+      },
+      {
+        "id": 6,
+        "image": "https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20240409-WA0445.jpg",
+        "model": "Mazda Atenza",
+        "yearOfManufacture": 2022
+      }
+    ]
+  }
+  

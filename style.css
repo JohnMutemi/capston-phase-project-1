@@ -1,0 +1,143 @@
+  /* Add CSS styles here */
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light gray background */
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  background-color: #f8f9fa; /* Light gray background */
+  border-bottom: 1px solid #dee2e6; /* Adds a slight border */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  max-width: 100px; /* Adjusts the logo size */
+  margin-right: 20px; /* Adds some space between logo and text */
+}
+
+.header-text h2, .header-text h3 {
+  margin: 0; /* Removes default margins */
+  color: #333; /* Dark text for better readability */
+}
+.header-text h2 {
+  font-size: 1.5rem; /* Slightly larger font for the main header */
+}
+.header-text h3 {
+  font-size: 1.25rem; /* Smaller font for the subheader */
+  font-weight: 400; /* Lighter font-weight */
+}
+.main-nav .nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.main-nav .nav-list li {
+  padding: 10px 20px;
+}
+
+.main-nav .nav-list li a {
+  text-decoration: none;
+  color: #343a40; /* Dark gray text color */
+  font-weight: bold;
+}
+
+.main-nav .nav-list li a:hover {
+  color: #007bff; /* Hover color */
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #e9ecef;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.car-make-dropdown {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.year-range-slider {
+  width: 200px; /* Adjust as needed */
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #007bff;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #007bff;
+  cursor: pointer;
+}
+
+
+.car-display-container {
+  background-color: #ffffff; /* White background for car display container */
+  border: 1px solid #ced4da; /* Border around container */
+  border-radius: 5px; /* Rounded corners */
+  margin: 20px;
+  padding: 20px;
+}
+
+.car-display-container h2 {
+  color: #343a40; /* Dark gray text color for heading */
+}
+
+.car-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-images img {
+  width: 200px; /* Adjust image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px;
+}
+

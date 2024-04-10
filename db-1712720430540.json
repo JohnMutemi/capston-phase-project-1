@@ -1,0 +1,40 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "image": "https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240409-WA0320.jpg",
+      "model": "Mercedenz Benz A180",
+      "yearOfManufacture": 2015
+    },
+    {
+      "id": 2,
+      "image": "https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240409-WA0311.jpg",
+      "model": "VolsWage Touareg",
+      "yearOfManufacture": 2011
+    },
+    {
+      "id": 3,
+      "image": "https://www.automobile-catalog.com/img/pictonorzw/mercedes-amg/2023-mercedes-a-22c0355-001.jpg",
+      "model": "Mercedes-AMG A 45 S 4MATIC",
+      "yearOfManufacture": 2022
+    },
+    {
+      "id": 4,
+      "image": "https://www.automobile-catalog.com/img/pictonorzw/ram/2022-ram-1500-long-box-2.jpg",
+      "model": "Ram 1500 Quad",
+      "yearOfManufacture": 2022
+    },
+    {
+      "id": 5,
+      "image": "https://www.automobile-catalog.com/img/pictonorzw/hyundai_usa/2019-31807-2019santafe.jpg",
+      "model": "Hyundai Santa Fe 2.0 T Limited FWD",
+      "yearOfManufacture": 2021
+    },
+    {
+      "id": 6,
+      "image": "https://www.automobile-catalog.com/img/pictonorzw/bmw/2022-g42-p90428416-the-all-new-bmw-220i.jpg",
+      "model": "BMW 220i Coupe",
+      "yearOfManufacture": 2022
+    }
+  ]
+}
