@@ -41,7 +41,6 @@
                 <label for="make-dropdown">Make:</label>
                 <select class="car-make-dropdown" id="make-dropdown">
                     <option value="">Select Make</option>
-                    <!-- Options will be dynamically added via JavaScript -->
                 </select>
                 <button type="button" class="btn btn-primary" id="searchByMake">Search by Make</button>
             </div>
@@ -79,40 +78,57 @@
             <p>Makuti Cars now offers installment plans that befit your budget. Reach out to grab your car chance while it lasts!</p>
         </div>
         <!-- Rating Section -->
-<div class="rating-section">
-    <h3>Customer Testimonials & Ratings</h3>
-    <h4>Moussets Kenya</h4>
-    <div id="previous-ratings">
-        <!-- Example of a previous rating -->
-        <p>Excellent services received, I highly recommend Makuti Cars!</p>
-        <div class="rating">★★★★☆</div>
-    </div>
-    <h4>Clemo Holdings</h4>
-    <div id="previous-ratings">
-        <!-- Example of a previous rating -->
-        <p>Since discovering makuti cars, my car dream turned a reality.</p>
-        <div class="rating">★★★★★</div>
-        <h3>Mustafa G.</h3>
-    <div id="previous-ratings">
-        <!-- Example of a previous rating -->
-        <p>Affordable and reliable cars! Thank you Makuti</p>
-        <div class="rating">★★★★★</div>
-</div>
+        <div class="rating-section">
+            <h3>Customer Testimonials & Ratings</h3>
+            <div id="previous-ratings">
+                <div class="testimonial">
+                    <p><strong>Name:</strong> Moussets Kenya</p>
+                    <p><strong>Rating:</strong> ★★★★☆</p>
+                    <p><strong>Comment:</strong> Excellent services received, I highly recommend Makuti Cars!</p>
+                </div>
+            </div>
+            <div id="previous-ratings">
+                <div class="testimonial">
+                    <p><strong>Name:</strong> Clemo Holdings</p>
+                    <p><strong>Rating:</strong> ★★★★★</p>
+                    <p><strong>Comment:</strong> Since discovering Makuti Cars, my car dream turned into a reality.</p>
+                    <p><strong>Name:</strong> Mustafa G.</p>
+                    <p><strong>Rating:</strong> ★★★★★</p>
+                    <p><strong>Comment:</strong> Affordable and reliable cars! Thank you Makuti.</p>
+                </div>
+            </div>
+        </div>
+        
+        
 
 <!-- Comment and Rate Your Experience Section -->
-<div class="comment-section">
-    <h3>Rate Your Experience</h3>
-    <div id="rateExperience">
-        <span class="star" data-value="1">☆</span>
-        <span class="star" data-value="2">☆</span>
-        <span class="star" data-value="3">☆</span>
-        <span class="star" data-value="4">☆</span>
-        <span class="star" data-value="5">☆</span>
-    </div>
-    <textarea id="comment" placeholder="Leave a comment..."></textarea>
-    <button id="submitComment">Submit</button>
-</div>
+<form id="commentForm" action="/submit-your-comment" method="post">
+    <fieldset>
+        <legend><h3>Rate Your Experience</h3></legend>
 
+        <div id="rateExperience" class="rate-experience">
+            <span class="star" data-value="1">☆</span>
+            <span class="star" data-value="2">☆</span>
+            <span class="star" data-value="3">☆</span>
+            <span class="star" data-value="4">☆</span>
+            <span class="star" data-value="5">☆</span>
+        </div>
+    </fieldset>
+
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <textarea id="comment" name="comment" placeholder="Leave a comment..." required></textarea>
+    <button type="submit" id="submitComment">Submit</button>
+</form>
+
+<div id="feedbackDisplay"></div>
+<!-- feedback to be -->
         
         <!-- car display Section -->
         <div class="car-display-container" id="cars"> 
@@ -133,11 +149,11 @@
                 <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Your Name:</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="userName" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Your Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="userEmail" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message:</label>
@@ -149,13 +165,10 @@
         </div>
         
     </main>
-  
-    <!-- Bootstrap JavaScript -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Custom JavaScript -->
     <script src="index.js"></script>
 </body>
 </html>

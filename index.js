@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Add the car model
                 const carModel = document.createElement('h4');
                 carModel.textContent = car.model;
-                console.log(carModel)
+                // console.log(carModel)
                 carDiv.appendChild(carModel);
 
                 // Add the year of manufacture
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(response => response.json())
                 .then(data => {
                     const makeDropdown = document.querySelector('.car-make-dropdown');
-                    const carMakes = new Set(data.map(car => car.model)); // This removes any duplicate
+                    const carMakes = new Set(data.map(car => car.model)); 
                     carMakes.forEach(make => {
                         const option = document.createElement('option');
                         option.value = make;
@@ -75,11 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const priceRangeDropdown = document.getElementById('priceRange');
                 searchByPriceButton.addEventListener('click', function() {
                     const selectedRange = priceRangeDropdown.value.split('-').map(Number);
-                    fetch(`http://localhost:3000/cars?price=${car.price}`)
+                    fetch(`http://localhost:3000/cars?price=${selectedRange}`)
                         .then(response => response.json())
                         .then(cars => {
                             let matchingCarByPrice = cars.find(car => car.price >= selectedRange[0] && car.price <= selectedRange[1]);
-                            console.log(matchingCarByPrice)
+                            // console.log(matchingCarByPrice)
                                 displayCarData(matchingCarByPrice);
                         })
                         .catch(error => console.error('Error:', error));
@@ -115,64 +115,141 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
     
 
-    // Handle star rating
-    const stars = document.querySelectorAll('.star');
-    let currentRating = 0;
+   // Handle star rating
+const stars = document.querySelectorAll('.star');
+let currentRating = 0;
 
-    stars.forEach(star => {
-        star.addEventListener('click', function() {
-           const currentRating = this.getAttribute('data-value');
-            updateStars(currentRating);
-        });
+stars.forEach(star => {
+    star.addEventListener('click', function() {
+        currentRating = parseInt(this.getAttribute('data-value'));
+        updateStars(currentRating);
     });
+});
 
-    function updateStars(rating) {
-        stars.forEach(star => {
-            if(star.getAttribute('data-value') <= rating) {
-                star.textContent = '★';
-            } else {
-                star.textContent = '☆';
-            }
-        });
-    }
-
-    // Handle comment submission
-    document.getElementById('submitComment').addEventListener('click', function() {
-        const comment = document.getElementById('comment').value;
-        if (currentRating > 0 && comment) {
-            const data = {
-                rating: currentRating,
-                comment: comment
-            };
-    
-            fetch('http://localhost:3000/cars', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept':'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Data successfully sent to server
-                    // You can update UI accordingly if needed
-                    console.log('Comment and rating submitted successfully.');
-                    document.getElementById('comment').value = '';
-                    updateStars(0); // Reset stars
-                } else {
-                    // Handle errors
-                    console.error('Error submitting comment and rating:', response.status);
-                    alert('Error submitting comment and rating. Please try again later.');
-                }
-            })
-            .catch(error => {
-                // Handle network errors
-                console.error('Network error:', error);
-                alert('Network error. Please try again later.');
-            });
+function updateStars(rating) {
+    stars.forEach(star => {
+        if (parseInt(star.getAttribute('data-value')) <= rating) {
+            star.textContent = '★';
         } else {
-            alert('Please leave a rating and a comment.');
+            star.textContent = '☆';
         }
     });
+}
+
+// Function to generate a string of stars based on rating
+function generateStars(rating) {
+    let stars = '';
+    for(let i = 0; i < 5; i++) {
+        stars += i < rating ? '★' : '☆';
+    }
+    return stars;
+}
+
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const comment = document.getElementById('comment').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    if (comment && currentRating > 0 && name && email) {
+        const data = {
+            rating: currentRating,
+            comment: comment,
+            name: name,
+            email: email
+        };
+
+        // Send the data to the backend
+        fetch('http://localhost:3000/ratings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Append new feedback to existing comments
+            const feedbackContainer = document.getElementById('previous-ratings');
+            const newFeedback = document.createElement('div');
+            newFeedback.classList.add('testimonial');
+            newFeedback.innerHTML = `
+                <p><strong>Name:</strong> ${data.name}</p>
+                <p><strong>Rating:</strong> ${generateStars(data.rating)}</p>
+                <p><strong>Comment:</strong> ${data.comment}</p>
+            `;
+            feedbackContainer.appendChild(newFeedback);
+
+            // Clear the form fields
+            document.getElementById('comment').value = '';
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+
+            // Optionally, display a success message or handle redirection
+            console.log('Feedback submitted successfully:', data);
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error submitting feedback:', error);
+        });
+    } else {
+        alert('Please fill in all fields and select a rating.');
+    }
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+console.log('Form-submitted')
+    const userName = document.getElementById('userName').value;
+    const userEmail = document.getElementById('userEmail').value;
+    const message = document.getElementById('message').value;
+
+    console.log('Name:', userName); // Log to check the value of the name field
+    console.log('Email:', userEmail); // Log to check the value of the email field
+    console.log('Message:', message); // Log to check the value of the message field
+
+   // Debugging line to see what values are being captured
+
+    if (userName && userEmail && message) {
+        const feedbackData = {
+            yourName: userName,
+            yourEmail: userEmail,
+            comment: message,
+        };
+
+        console.log('Data ready to send:', feedbackData); // Another debugging line
+
+        fetch('http://localhost:3000/feedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(feedbackData)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+            console.log('Feedback submitted successfully:', data);
+            document.getElementById('contactForm').reset();
+            alert('Thank you for your message!');
+        })
+        .catch(error => {
+            console.error('Error submitting feedback:', error);
+            alert('There was a problem with your submission. Please try again.');
+        });
+    }
+     else {
+        console.log('Validation failed.'); // Indicates which part of the code is being executed
+        alert('Please fill in all fields.');
+    }
+});
 })
+
+
+    

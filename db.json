@@ -33,7 +33,7 @@
       "image": "https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20240408-WA0167.jpg",
       "model": "Subaru Outback",
       "yearOfManufacture": 2021,
-      "price":650000
+      "price": 650000
     },
     {
       "id": 6,
@@ -41,6 +41,258 @@
       "model": "Mazda Atenza",
       "yearOfManufacture": 2022,
       "price": 500000
+    },
+    
+    {
+
+    "id": 7,
+      "image": "",
+      "model": "Mazda Atenza",
+      "yearOfManufacture": 2022,
+      "price": 500000
+
+    },
+  ]
+
+  "ratings": [
+    {
+      "star-rating": 4,
+      "comment": "Awesome",
+      "id": 1,
+      "user": ""
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 2
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 3
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 4
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 5
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 6
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 7
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 8
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 9
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 10
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 11
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 12
+    },
+    {
+      "rating": 20,
+      "comment": "cccc",
+      "id": 13
+    },
+    {
+      "rating": 6,
+      "comment": "sxx",
+      "id": 14
+    },
+    {
+      "rating": 6,
+      "comment": "sxx",
+      "id": 15
+    },
+    {
+      "rating": 3,
+      "comment": "sxx",
+      "id": 16
+    },
+    {
+      "rating": 3,
+      "comment": "sxx",
+      "id": 17
+    },
+    {
+      "rating": 3,
+      "comment": "dxxd",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 18
+    },
+    {
+      "rating": 3,
+      "comment": "dxxd",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 19
+    },
+    {
+      "rating": 3,
+      "comment": "dxxd",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 20
+    },
+    {
+      "rating": 3,
+      "comment": "scvv",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 21
+    },
+    {
+      "rating": 5,
+      "comment": "excellent experience",
+      "name": "willison",
+      "email": "jmd@yahoo.com",
+      "id": 22
+    },
+    {
+      "rating": 3,
+      "comment": "excellent",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 23
+    },
+    {
+      "rating": 3,
+      "comment": "excellent",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 24
+    },
+    {
+      "rating": 3,
+      "comment": "excellent",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 25
+    },
+    {
+      "rating": 3,
+      "comment": "excellent",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 26
+    },
+    {
+      "rating": 2,
+      "comment": "gfdd",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 27
+    },
+    {
+      "rating": 3,
+      "comment": "well done",
+      "name": "maxie",
+      "email": "chatgpt40014@gmail.com",
+      "id": 28
+    },
+    {
+      "rating": 4,
+      "comment": "excellent services",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 29
+    },
+    {
+      "rating": 3,
+      "comment": "lled",
+      "name": "maxie",
+      "email": "juma@gmail.com",
+      "id": 30
+    },
+    {
+      "rating": 4,
+      "comment": "Well done!!",
+      "name": "keneth Murithi",
+      "email": "juma@gmail.com",
+      "id": 31
+    },
+    {
+      "rating": 3,
+      "comment": "sdef",
+      "name": "keneth Murithi",
+      "email": "juma@gmail.com",
+      "id": 32
+    },
+    {
+      "rating": 4,
+      "comment": "hsujs",
+      "name": "kinywa",
+      "email": "mobeso@gmail.com",
+      "id": 33
+    },
+    {
+      "rating": 4,
+      "comment": "egbc",
+      "name": "sdf kimeiu",
+      "email": "joh@mail.com",
+      "id": 34
+    },
+    {
+      "rating": 3,
+      "comment": "sv",
+      "name": "sdf kimeiu",
+      "email": "juma@gmail.com",
+      "id": 35
+    },
+    {
+      "rating": 4,
+      "comment": "excellent",
+      "name": "sdf kimeiu",
+      "email": "juma@gmail.com",
+      "id": 36
+    }
+  ],
+  "feedback": [
+    {
+      "message": "",
+      "id": "",
+      "Name": "",
+      "Email": ""
+    },
+    {
+      "yourName": "sdf kimeiu",
+      "yourEmail": "juma@gmail.com",
+      "comment": "shr",
+      "id": "VR0ewUZ"
+    },
+    {
+      "yourName": "sdf kimeiu",
+      "yourEmail": "juma@gmail.com",
+      "comment": "I am interested in buying a car",
+      "id": "XDjL0J5"
     }
   ]
 }
