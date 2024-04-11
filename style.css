@@ -34,17 +34,41 @@ body {
 }
 
 /* Navigation Styles */
-.main-nav .nav-list li a {
-  color: #fff;
-  background-color: #007bff; /* Bootstrap primary blue for consistency */
-  border-radius: 5px;
-  padding: 5px 15px;
-  transition: background-color 0.3s ease-in-out;
+/* Navigation Bar Enhancements */
+.main-nav {
+  background-color: #007bff; /* Using a solid color background for contrast */
+  text-align: center; /* Center-aligns the navigation items */
+  padding: 10px 0; /* Adds padding above and below the nav bar */
 }
 
-.main-nav .nav-list li a:hover {
-  background-color: #0056b3; /* A slightly darker blue on hover */
+.nav-list {
+  list-style: none; /* Removes default list styling */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  display: flex; /* Displays nav items in a row */
+  justify-content: center; /* Centers the nav items */
+  align-items: center; /* Vertically aligns nav items */
 }
+
+.nav-list li {
+  margin: 0 10px; /* Adds space between each nav item */
+}
+
+.nav-list li a {
+  display: block; /* Allows width and height to be set */
+  background-color: #0056b3; /* Darker background for each nav item for contrast */
+  color: #ffffff; /* White text for readability */
+  padding: 10px 20px; /* Adds space inside each nav item */
+  border-radius: 5px; /* Rounds the corners of the nav items */
+  font-size: 1.2rem; /* Increases the font size */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-list li a:hover {
+  background-color: #00408d; /* Slightly darker on hover for visual feedback */
+  text-decoration: none; /* Removes underline on hover */
+}
+
 
 /* Featured and Filtered Car Section Enhancements */
 .find-a-car-section, .featured-cars-section, #filterResults {
@@ -131,4 +155,53 @@ body {
 
 #contactForm button:hover {
   background-color: #0056b3; /* A darker shade of blue */
+}
+/* Header Text Styles */
+.header-text {
+  text-align: center; /* Centers the text */
+  padding: 20px 0; /* Adds some padding above and below */
+  color: #007bff; /* A seductive, attention-grabbing color */
+}
+
+.header-text h2 {
+  font-size: 2.5rem; /* Larger size for the main title */
+  font-weight: 700; /* Bold font weight */
+  margin-bottom: 0.5rem; /* Adds a little space between the title and subtitle */
+  color: #d9534f; /* A bold, seductive color */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+  font-family: 'Georgia', serif; /* A more elegant font choice */
+}
+
+.header-text h3 {
+  font-size: 1.8rem; /* Slightly smaller size for the subtitle */
+  font-weight: 400; /* Lighter font weight for balance */
+  color: #5cb85c; /* A contrasting, yet harmonious color */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.15); /* Lighter shadow for consistency */
+  font-family: 'Arial', sans-serif; /* Keeps it readable and stylish */
+}
+/* Featured Cars Section Styles */
+.featured-cars-section {
+  text-align: center; /* Centers the title and images */
+  padding: 20px; /* Adds padding around the section */
+  background-color: #f8f9fa; /* A light background color for contrast */
+  margin: 20px 0; /* Adds some vertical space around the section */
+}
+
+.featured-cars-section h3 {
+  color: #005288; /* Gives the title a distinctive color */
+  margin-bottom: 20px; /* Adds space between the title and the images */
+}
+
+#featuredCars {
+  display: flex;
+  flex-direction: column; /* Aligns the images in a column */
+  align-items: center; /* Centers the images horizontally */
+  gap: 15px; /* Adds space between each image */
+}
+
+#featuredCars img {
+  max-width: 60%; /* Reduces the size of the images */
+  height: auto; /* Maintains the aspect ratio of the images */
+  border-radius: 8px; /* Optionally rounds the corners of the images */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
 }
