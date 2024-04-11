@@ -1,104 +1,134 @@
-  /* Add CSS styles here */
-  .marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
-}
-
+/* General Reset and Body Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa; /* Light gray background */
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5; /* Soft background color for overall comfort */
+  color: #333; /* Universal text color for readability */
+  line-height: 1.6;
 }
 
+/* Header Enhancements */
 .site-header {
-  background-color: #f8f9fa; /* Light gray background */
-  border-bottom: 1px solid #dee2e6; /* Adds a slight border */
+  background-color: #005288; /* Rich company color */
+  color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4); /* Adds depth */
 }
 
-.logo-container {
+.site-header .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
+
+.site-header h2, .site-header h3 {
+  margin: 0; /* Removes default margin */
+  padding-left: 15px;
+}
+
+/* Adjust logo image sizes */
 .logo {
-  max-width: 100px; /* Adjusts the logo size */
-  margin-right: 20px; /* Adds some space between logo and text */
+  height: 80px; /* Fixes the logo size */
+  width: auto; /* Maintain aspect ratio */
 }
 
-.header-text h2, .header-text h3 {
-  margin: 0; /* Removes default margins */
-  color: #333; /* Dark text for better readability */
-}
-.header-text h2 {
-  font-size: 1.5rem; /* Slightly larger font for the main header */
-}
-.header-text h3 {
-  font-size: 1.25rem; /* Smaller font for the subheader */
-  font-weight: 400; /* Lighter font-weight */
-}
-.main-nav .nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,.1);
-}
-
-.main-nav .nav-list li {
-  padding: 10px 20px;
-}
-
+/* Navigation Styles */
 .main-nav .nav-list li a {
-  text-decoration: none;
-  color: #343a40; /* Dark gray text color */
-  font-weight: bold;
+  color: #fff;
+  background-color: #007bff; /* Bootstrap primary blue for consistency */
+  border-radius: 5px;
+  padding: 5px 15px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .main-nav .nav-list li a:hover {
-  color: #007bff; /* Hover color */
+  background-color: #0056b3; /* A slightly darker blue on hover */
 }
 
-.search-section {
+/* Featured and Filtered Car Section Enhancements */
+.find-a-car-section, .featured-cars-section, #filterResults {
+  margin: 20px 0;
+  padding: 15px;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* Image Size Adjustments */
+.find-a-car-section img, .featured-cars-section img, #filterResults img {
+  max-width: 100%; /* Ensures images are responsive */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes bottom space */
+  margin: 0 auto; /* Centers image */
+}
+
+/* Customer Testimonials and Ratings Styles */
+.rating-section, .comment-section {
+  background: #e7eff9; /* Soft background to distinguish section */
   padding: 20px;
-  background-color: #f5f5f5; /* Light grey background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Slight shadow for depth */
-  display: flex;
-  justify-content: center; /* Centers the dropdown horizontally */
-  align-items: center; /* Centers the dropdown vertically */
-  margin: 20px 0; /* Adds some space above and below the section */
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.rating {
+  color: #ffc107; /* Gold color for stars */
+  font-size: 1.2em;
+}
 
-.car-display-container {
-  background-color: #ffffff; /* White background for car display container */
-  border: 1px solid #ced4da; /* Border around container */
-  border-radius: 5px; /* Rounded corners */
-  margin: 20px;
+.comment-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccd1d9;
+}
+
+/* Contact Section Enhancements */
+.contact-section {
+  background: #ffffff;
   padding: 20px;
-}
-.car-display-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* This will space out your items evenly */
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.car {
-  flex-basis: 45%; /* This makes each car take up roughly half the container's width minus a bit of margin */
-  margin-bottom: 20px; /* Adds some space between rows */
+.contact-section .social-icons a {
+  margin-right: 15px;
+  color: #333; /* Darker icons for better visibility */
 }
 
-.car img {
-  max-width: 100%; /* This ensures images are fully contained within their .car div without overflowing */
-  height: auto; /* Keeps the aspect ratio of the images */
+.contact-section .social-icons i {
+  margin-right: 8px;
 }
 
+/* Form Styles */
+#contactForm {
+  margin-top: 20px;
+}
+
+#contactForm .form-group {
+  margin-bottom: 15px;
+}
+
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccd1d9;
+}
+
+#contactForm button {
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contactForm button:hover {
+  background-color: #0056b3; /* A darker shade of blue */
+}
