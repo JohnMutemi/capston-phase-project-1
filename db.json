@@ -10,7 +10,7 @@
     {
       "id": 2,
       "image": "https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240409-WA0311.jpg",
-      "model": "VolsWage Touareg",
+      "model": "VolksWagen Touareg",
       "yearOfManufacture": 2011,
       "price": 1700000
     },
@@ -302,6 +302,41 @@
       "name": "joseph",
       "email": "juma@gmail.com",
       "id": 38
+    },
+    {
+      "rating": 3,
+      "comment": "rr6t7kluo",
+      "name": "joseph",
+      "email": "juma@gmail.com",
+      "id": 39
+    },
+    {
+      "rating": 3,
+      "comment": "yh",
+      "name": "kinywa",
+      "email": "joh@mail.com",
+      "id": 40
+    },
+    {
+      "rating": 4,
+      "comment": "svv",
+      "name": "joseph",
+      "email": "juma@gmail.com",
+      "id": 41
+    },
+    {
+      "rating": 4,
+      "comment": "svv",
+      "name": "joseph",
+      "email": "juma@gmail.com",
+      "id": 42
+    },
+    {
+      "rating": 3,
+      "comment": "excellent job",
+      "name": "sdf kimeiu",
+      "email": "juma@gmail.com",
+      "id": 43
     }
   ],
   "feedback": [
@@ -334,6 +369,24 @@
       "yourEmail": "juma@gmail.com",
       "comment": "gnvc",
       "id": "KgU4nZV"
+    },
+    {
+      "yourName": "sdf kimeiu",
+      "yourEmail": "chatgpt40014@gmail.com",
+      "comment": "dv",
+      "id": "UqFa5V2"
+    },
+    {
+      "yourName": "joseph",
+      "yourEmail": "chatgpt40014@gmail.com",
+      "comment": "dfbng mn",
+      "id": "PvQSbgc"
+    },
+    {
+      "yourName": "joseph",
+      "yourEmail": "jmd@yahoo.com",
+      "comment": "jdhtsgzfxcglufydx",
+      "id": "OsJi-aU"
     }
   ]
 }
