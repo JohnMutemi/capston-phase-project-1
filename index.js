@@ -1,5 +1,7 @@
+// add event listener that waits for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch the data from db.json
+    // get car details to display available cars in stock
     fetch("http://localhost:3000/cars") 
         .then(response => response.json()) // Parse the JSON from the response
         .then(data => {
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Error fetching cars:', error));
      
         //fetch and add car details by search make 
-            fetch("http://localhost:3000/cars")
+        fetch("http://localhost:3000/cars")
                 .then(response => response.json()) //parse JSON from the response
                 .then(data => {
                     const makeDropdown = document.querySelector('.car-make-dropdown');
@@ -178,7 +180,65 @@ function generateStars(rating) {
     }
     return stars;
 }
-// add event listener
+// edit revise comment
+function editFeedback(id) {
+    const newName = prompt("Enter new name:");
+    const newComment = prompt("Enter new comment:");
+    const newRating = parseInt(prompt("Enter new rating (1-5):"));
+
+    if (newName && newComment && !isNaN(newRating)) {
+        const updatedData = {
+            name: newName,
+            comment: newComment,
+            rating: newRating
+        };
+
+        fetch(`http://localhost:3000/ratings/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(updatedData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Feedback updated successfully:', data);
+            // Update the feedback display on the page
+            const feedbackElement = document.getElementById(id);
+            feedbackElement.innerHTML = `
+                <div id =${data.id}>
+                <p><strong>Name:</strong> ${data.name}</p>
+                <p><strong>Rating:</strong> ${generateStars(data.rating)}</p>
+                <p><strong>Comment:</strong> ${data.comment}</p>
+               <p><button onclick ="editFeedback(${data.id})">Edit this comment</button></p>
+               <p> <button  class ="delete-button" onclick= "deleteFeedback(${data.id})">Delete</button></p>
+               </div>
+            `;
+        })
+        .catch(error => console.error('Error updating feedback:', error));
+    } else {
+        alert('Please fill all fields correctly.');
+    }
+}
+
+
+//  delete a comment
+function deleteFeedback(id){
+    // console.log(id)
+    fetch(`http://localhost:3000/ratings/${id}`, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+            const feedbackElement = document.getElementById(id);
+            feedbackElement.remove();
+            console.log('Feedback deleted successfully');
+        }
+    })
+    .catch(error => console.error('Error deleting feedback:', error));
+}
+// add event
 document.getElementById('commentForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -210,10 +270,16 @@ document.getElementById('commentForm').addEventListener('submit', function(event
             const newFeedback = document.createElement('div');
             newFeedback.classList.add('testimonial');
             newFeedback.innerHTML = `
+                <div id =${data.id}>
                 <p><strong>Name:</strong> ${data.name}</p>
                 <p><strong>Rating:</strong> ${generateStars(data.rating)}</p>
                 <p><strong>Comment:</strong> ${data.comment}</p>
+
+               <p><button onclick ="editFeedback(${data.id})">Edit this comment</button></p>
+               <p> <button  class ="delete-button" onclick= "deleteFeedback(${data.id})">Delete</button></p>
+               </div>
             `;
+           
             feedbackContainer.appendChild(newFeedback);
 
             // Clear the form fields
@@ -222,7 +288,7 @@ document.getElementById('commentForm').addEventListener('submit', function(event
             document.getElementById('email').value = '';
 
             // Optionally, display a success message or handle redirection
-            console.log('Feedback submitted successfully:', data);//test whether data is successfully sent
+            // console.log('Feedback submitted successfully:', data);//test whether data is successfully sent
         })
         .catch(error => {
             // Handle errors
@@ -246,6 +312,7 @@ console.log('Form-submitted')
     console.log('Message:', message); // Log to check the value of the message field
 
 //    feedback section
+// code to send customer message after reviewing
 // a conditional statement to check whether all attributes are present
     if (userName && userEmail && message) {
         const feedbackData = {
@@ -255,13 +322,11 @@ console.log('Form-submitted')
         };
 // debug to see whether data is captured and can be send
         console.log('Data ready to send:', feedbackData); 
-
-// code to send customer message after reviewing
-// use POST to send feedback
-        fetch('http://localhost:3000/feedback', {
+  fetch('http://localhost:3000/feedback', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept':'application/json'
             },
             body: JSON.stringify(feedbackData)
         })
@@ -272,7 +337,8 @@ console.log('Form-submitted')
             throw new Error('Network response was not ok.');
         })
         .then(data => {
-            console.log('Feedback submitted successfully:', data);
+            // debugging line
+            // console.log('Feedback submitted successfully:', data);
             document.getElementById('contactForm').reset();
             alert('Thank you for your message!');
         })
@@ -285,7 +351,12 @@ console.log('Form-submitted')
         console.log('Validation failed.'); // Indicates which part of the code is being executed
         alert('Please fill in all fields.');
     }
-});
+
+    // To update the comments by the user using PATCH
+    
+// To enable delete by User on a specific comment
+
+
 // Toggling
 // to effect the toggle theme
    const themeToggleButton = document.getElementById('theme-toggle');// access the toggle button
@@ -305,9 +376,9 @@ console.log('Form-submitted')
         } else {
             localStorage.setItem('theme', 'light');
         }
+    
     });
 
 
-
-
+})
     

@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f2f5; /* Soft background color for overall comfort */
-  color: #333; /* Universal text color for readability */
+  background-color: #f0f2f5; 
+  color: #333; 
   line-height: 1.6;
 }
 /* Dark Theme */
@@ -13,18 +13,18 @@ body.dark-mode {
   color: #fff;
 }
 
-/* Styles for other elements in dark mode */
+
 .dark-mode .navbar, .dark-mode .footer {
   background-color: #222;
   color: #ccc;
 }
 
-/* Header Enhancements */
+/* Header*/
 .site-header {
-  background-color: #005288; /* Rich company color */
+  background-color: #005288; 
   color: #ffffff;
   padding: 20px 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.4); /* Adds depth */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4); 
 }
 
 .site-header .container {
@@ -37,7 +37,7 @@ body.dark-mode {
   margin: 0; /* Removes default margin */
   padding-left: 15px;
 }
-/* CSS Styling */
+
 .featured-car {
   display: inline-block;
   margin-right: 50px;
@@ -69,11 +69,10 @@ body.dark-mode {
 }
 
 /* Navigation Styles */
-/* Navigation Bar Enhancements */
 .main-nav {
-  background-color: #007bff; /* Using a solid color background for contrast */
+  background-color: #007bff; 
   text-align: center; /* Center-aligns the navigation items */
-  padding: 10px 0; /* Adds padding above and below the nav bar */
+  padding: 10px 0; 
 }
 
 .nav-list {
@@ -96,12 +95,12 @@ body.dark-mode {
   padding: 10px 20px; /* Adds space inside each nav item */
   border-radius: 5px; /* Rounds the corners of the nav items */
   font-size: 1.2rem; /* Increases the font size */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  transition: background-color 0.3s ease; 
 }
 
 .nav-list li a:hover {
-  background-color: #00408d; /* Slightly darker on hover for visual feedback */
-  text-decoration: none; /* Removes underline on hover */
+  background-color: #00408d; 
+  text-decoration: none; 
 }
 
 
@@ -116,15 +115,15 @@ body.dark-mode {
 
 /* Image Size Adjustments */
 .find-a-car-section img, .featured-cars-section img, #filterResults img {
-  max-width: 100%; /* Ensures images are responsive */
-  height: auto; /* Maintains aspect ratio */
+  max-width: 100%; 
+  height: auto; 
   display: block; /* Removes bottom space */
   margin: 0 auto; /* Centers image */
 }
 
 /* Customer Testimonials and Ratings Styles */
 .rating-section, .comment-section {
-  background: #e7eff9; /* Soft background to distinguish section */
+  background: #e7eff9; 
   padding: 20px;
   margin: 20px 0;
   border-radius: 8px;
@@ -155,7 +154,7 @@ body.dark-mode {
 
 .contact-section .social-icons a {
   margin-right: 15px;
-  color: #333; /* Darker icons for better visibility */
+  color: #333; 
 }
 
 .contact-section .social-icons i {
@@ -179,7 +178,7 @@ body.dark-mode {
 }
 
 #contactForm button {
-  background-color: #007bff; /* Bootstrap primary blue */
+  background-color: #007bff; /* Bootstrap*/
   color: #ffffff;
   padding: 10px 20px;
   border: none;
@@ -208,22 +207,22 @@ body.dark-mode {
 }
 
 .header-text h3 {
-  font-size: 1.8rem; /* Slightly smaller size for the subtitle */
+  font-size: 1.8rem; 
   font-weight: 400; /* Lighter font weight for balance */
-  color: #5cb85c; /* A contrasting, yet harmonious color */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.15); /* Lighter shadow for consistency */
-  font-family: 'Arial', sans-serif; /* Keeps it readable and stylish */
+  color: #5cb85c; 
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.15); 
+  font-family: 'Arial', sans-serif; 
 }
 /* Featured Cars Section Styles */
 .featured-cars-section {
   text-align: center; /* Centers the title and images */
-  padding: 20px; /* Adds padding around the section */
-  background-color: #f8f9fa; /* A light background color for contrast */
-  margin: 20px 0; /* Adds some vertical space around the section */
+  padding: 20px; 
+  background-color: #f8f9fa; 
+  margin: 20px 0; 
 }
 
 .featured-cars-section h3 {
-  color: #005288; /* Gives the title a distinctive color */
+  color: #005288; 
   margin-bottom: 20px; /* Adds space between the title and the images */
 }
 
@@ -269,9 +268,9 @@ body.dark-mode {
   color: #f0ad4e; /* Change to a gold color when hovered */
 }
 
-/* This part is optional to visually indicate a star that has been selected */
+
 .rate-experience .star.selected {
-  color: #ffd700; /* Permanent color change for selected stars */
+  color: #ffd700; 
 }
 /* Styling the submit button */
 #submitComment {
@@ -284,16 +283,15 @@ body.dark-mode {
   font-size: 16px;
   margin: 20px 0; /* Margin top/bottom */
   cursor: pointer;
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
+  border: none; 
+  border-radius: 5px; 
   transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
 #submitComment:hover {
-  background-color: #45a049; /* Slightly darker green when hovered */
+  background-color: #45a049; 
 }
 
-/* Optional: Clearfix to ensure proper layout below the stars */
 .rate-experience:after {
   content: "";
   display: table;
@@ -337,7 +335,7 @@ body.dark-mode {
   background: white;
   padding: 20px;
   border-radius: 8px; /* Rounded corners for the form */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow around the form */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
 
 #contactForm .form-group {
