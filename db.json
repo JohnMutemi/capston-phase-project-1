@@ -41,19 +41,34 @@
       "model": "Mazda Atenza",
       "yearOfManufacture": 2022,
       "price": 500000
-    },
-    
+    }
+  ],
+  "importCars": [
     {
-
-    "id": 7,
-      "image": "",
-      "model": "Mazda Atenza",
-      "yearOfManufacture": 2022,
-      "price": 500000
-
+      "id": 7,
+      "image": "https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240411-WA0207.jpg",
+      "model": "Audi SQ5",
+      "yearOfManufacture": 2018,
+      "price": 6000000,
+      "location": "Tokyo"
     },
-  ]
-
+    {
+      "id": 8,
+      "image": "https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240411-WA0193.jpg",
+      "model": "Audi Q5",
+      "yearOfManufacture": 2017,
+      "price": 4900000,
+      "location": "Hyundai"
+    },
+    {
+      "id": 9,
+      "image": "https://dashboard.kaiandkaro.com/media/vehicles/thumbnails/IMG-20240411-WA0167.jpg",
+      "model": "Audi A5",
+      "yearOfManufacture": 2017,
+      "price": 4600000,
+      "location": "mumbai"
+    }
+  ],
   "ratings": [
     {
       "star-rating": 4,
@@ -273,6 +288,20 @@
       "name": "sdf kimeiu",
       "email": "juma@gmail.com",
       "id": 36
+    },
+    {
+      "rating": 3,
+      "comment": "wscx",
+      "name": "sdf kimeiu",
+      "email": "mobeso@gmail.com",
+      "id": 37
+    },
+    {
+      "rating": 3,
+      "comment": "wfegrh",
+      "name": "joseph",
+      "email": "juma@gmail.com",
+      "id": 38
     }
   ],
   "feedback": [
@@ -293,6 +322,18 @@
       "yourEmail": "juma@gmail.com",
       "comment": "I am interested in buying a car",
       "id": "XDjL0J5"
+    },
+    {
+      "yourName": "joseph",
+      "yourEmail": "jmd@yahoo.com",
+      "comment": "dxz",
+      "id": "NQgad4E"
+    },
+    {
+      "yourName": "sdf kimeiu",
+      "yourEmail": "juma@gmail.com",
+      "comment": "gnvc",
+      "id": "KgU4nZV"
     }
   ]
 }

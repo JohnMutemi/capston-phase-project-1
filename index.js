@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // console.log(data)
             // Get the car display container
             const carDisplayContainer = document.querySelector('.car-display-container');
-
             // Loop through each car in the data
             data.forEach(car => {
                 // Create a div to hold the car details
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 carDiv.classList.add('car');
 
                 // Add the car image
-                const carImage = document.createElement('img');
+                let carImage = document.createElement('img');
                 carImage.src = car.image;
                 carImage.alt = car.model;
                 carDiv.appendChild(carImage);
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 carDiv.appendChild(carModel);
 
                 // Add the year of manufacture
-                const carYear = document.createElement('p');
+                let carYear = document.createElement('p');
                 carYear.textContent = `Year of Manufacture: ${car.yearOfManufacture}`;
                 carDiv.appendChild(carYear);
 
@@ -68,23 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         })
                         .catch(error => console.error('Error:', error));
-                });
-            
-                // Fetch and display cars by price range
-                const searchByPriceButton = document.getElementById('searchByPrice');
-                const priceRangeDropdown = document.getElementById('priceRange');
-                searchByPriceButton.addEventListener('click', function() {
-                    const selectedRange = priceRangeDropdown.value.split('-').map(Number);
-                    fetch(`http://localhost:3000/cars?price=${selectedRange}`)
-                        .then(response => response.json())
-                        .then(cars => {
-                            let matchingCarByPrice = cars.find(car => car.price >= selectedRange[0] && car.price <= selectedRange[1]);
-                            // console.log(matchingCarByPrice)
-                                displayCarData(matchingCarByPrice);
-                        })
-                        .catch(error => console.error('Error:', error));
-                });
-            
+                });   
+             
+       
                 // Function to display car data
                 function displayCarData(car) {
                     // Create elements
@@ -93,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const modelParagraph = document.createElement('p');
                     const yearParagraph = document.createElement('p');
                     const priceParagraph = document.createElement('p');
+            
                 
                     // Set attributes and text content
                     carImage.src = car.image;
@@ -113,8 +99,51 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Append container to carDisplaySection
                     carDisplaySection.appendChild(carContainer);
                 }
+            
+                // Fetch and display international Cars
     
+    const internationalCarsDiv = document.getElementById('internationalCars');
 
+    // Function to fetch international cars and display them
+    function fetchInternationalCars() {
+        fetch("http://localhost:3000/importCars")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(cars => {
+                displayInternationalCars(cars);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                internationalCarsDiv.innerHTML = `<p>Error loading cars: ${error.message}</p>`;
+            });
+    }
+
+    // Call the fetch function when the international stock section is hovered over
+    document.getElementById('international-stock').addEventListener('mouseover', fetchInternationalCars);
+});
+
+// Function to display international cars
+function displayInternationalCars(cars) {
+    const internationalCarsDiv = document.getElementById('internationalCars');
+    internationalCarsDiv.innerHTML = ''; // Clear previous content
+    cars.forEach(car => {
+        let carDiv = document.createElement('div');
+        carDiv.className = 'car-info';
+        carDiv.innerHTML = `
+            <img src="${car.image}" alt="${car.model}" class="img-fluid">
+            <p>Model: ${car.model}</p>
+            <p>Year: ${car.yearOfManufacture}</p>
+            <p>Price: $${car.price.toLocaleString()}</p>
+            <p>Location: ${car.location}</p>
+        `;
+        internationalCarsDiv.appendChild(carDiv);
+    });
+
+}
    // Handle star rating
 const stars = document.querySelectorAll('.star');
 let currentRating = 0;
@@ -249,7 +278,27 @@ console.log('Form-submitted')
         alert('Please fill in all fields.');
     }
 });
-})
+// to effect the toggle theme
+const themeToggleButton = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    // Apply the saved theme on reload
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    themeToggleButton.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        
+        // Save the current theme to localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+
 
 
     

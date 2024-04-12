@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Maruti Cars</title>
+    <title>Makuti Cars</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">  
@@ -29,11 +29,14 @@
             <ul class="nav-list">
                 <li><a href="#featured-cars">Home</a></li>
                 <li><a href="#cars">Available Cars</a></li>
-                <li><a href="#searchByPrice">Filter By Budget</a></li>
+                <li><a href="#international-stock">International Stock</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
-        
+
+        <!-- a toggle button -->
+        <button id="theme-toggle">Toggle Dark/Light Mode</button>
+
         <!-- Find a Car Section -->
         <div class="find-a-car-section">
             <h3>Find a Car</h3>
@@ -44,18 +47,7 @@
                 </select>
                 <button type="button" class="btn btn-primary" id="searchByMake">Search by Make</button>
             </div>
-            <div class="form-group">
-                <label for="priceRange">Select your budget:</label>
-                <select id="priceRange">
-                    <option value="">Select a price range</option>
-                    <option value="0-1000000">Up to 500,000</option>
-                    <option value="1000001-2000000">500,001 - 1,000,000</option>
-                    <option value="2000001-3000000">1,000,001 - 3,000,000</option>
-                    <option value="3000001-4000000">3,000,001 - 4,000,000</option>
-                    <option value="4000001-5000000">4,000,001 - 5,000,000</option>
-
-                </select>
-                <button type="button" class="btn btn-primary" id="searchByPrice">Search by Budget</button>
+                <button type="button" class="btn btn-primary" id="foreign-cars">View International Stock</button>
             </div>
 </div>
 
@@ -63,14 +55,23 @@
 <div id="filteredCarDisplay" >
     
 </div>
-       <!-- Featured Cars Section -->
-<div class="featured-cars-section" id ="featured-cars">
+   <!-- Featured Cars Section -->
+<div class="featured-cars-section" id="featured-cars">
     <h3>Featured Cars</h3>
     <div id="featuredCars">
-        <img id="featuredCar1" src="https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20240408-WA0126.jpg" alt="Featured Car 1" >
+        <img id="featuredCar1" src="https://dashboard.kaiandkaro.com/media/vehicles/images/IMG-20240408-WA0126.jpg" alt="Featured Car 1">
         <img id="featuredCar2" src="https://www.kaiandkaro.com/images/hero.svg">
     </div>
-</div>       
+</div>
+
+<!-- International Stock Section -->
+<div class="international-stock-section" id="international-stock">
+    <h3>Import Cars Up For Grabs!!</h3>
+    <div id="internationalCars">
+        <!-- Placeholder for dynamic content -->
+    </div>
+</div>
+
         <!-- Latest News Section -->
         <div class="latest-news-section">
             <h3>Latest News</h3>
@@ -98,7 +99,6 @@
                 </div>
             </div>
         </div>
-        
         
 
 <!-- Comment and Rate Your Experience Section -->
@@ -134,7 +134,7 @@
         <div class="car-display-container" id="cars"> 
             <h2>View our car display</h2>
             <!-- Car display content  -->
-        </div>
+        </div> 
         <div class="contact-section" id="contact">
             <h2>Contact Us</h2>
             <p>Email: makuticars@yahoo.com</p>

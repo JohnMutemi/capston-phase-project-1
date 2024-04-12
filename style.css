@@ -7,6 +7,17 @@ body {
   color: #333; /* Universal text color for readability */
   line-height: 1.6;
 }
+/* Dark Theme */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Styles for other elements in dark mode */
+.dark-mode .navbar, .dark-mode .footer {
+  background-color: #222;
+  color: #ccc;
+}
 
 /* Header Enhancements */
 .site-header {
